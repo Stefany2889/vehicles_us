@@ -29,13 +29,36 @@ check_dispercion = st.checkbox("Gráfica de disperción")
 
 if check_histograma:
 
-    st.write(
-        'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
+    check_precio = st.checkbox("Histograma de la variable precio")
+    check_odometer = st.checkbox("Histograma de la variable odometer")
+    check_año = st.checkbox("Histograma de la variable model_year")
 
-    # crear un histograma
-    fig = px.histogram(car_data, x="odometer")
+    if check_precio:
+        st.write(
+            'Creación de un histograma para el conjunto de datos de los precios para autos en EUA')
 
-    st.plotly_chart(fig, use_container_width=True)
+        # crear un histograma
+        fig = px.histogram(car_data, x="price")
+
+        st.plotly_chart(fig, use_container_width=True)
+
+    if check_odometer:
+        st.write(
+            'Creación de un histograma para el conjunto de datos del odometro para autos en EUA')
+
+        # crear un histograma
+        fig = px.histogram(car_data, x="odometer")
+
+        st.plotly_chart(fig, use_container_width=True)
+
+    if check_año:
+        st.write(
+            'Creación de un histograma para el conjunto de datos del año del modelo para autos en EUA')
+
+        # crear un histograma
+        fig = px.histogram(car_data, x="model_year")
+
+        st.plotly_chart(fig, use_container_width=True)
 
 
 if check_dispercion:
