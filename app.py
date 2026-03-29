@@ -4,7 +4,7 @@ import plotly.express as px
 
 
 car_data = pd.read_csv(
-    '/Users/stef/Desktop/TripleTen/Proyecto_web/vehicles_us/vehicles_us.csv')  # leer los datos
+    'vehicles_us.csv')  # leer los datos
 
 
 st.set_page_config(
