@@ -29,6 +29,10 @@ check_dispercion = st.checkbox("Gráfica de disperción")
 
 if check_histograma:
 
+     st.write(
+            'Selecciona cual histograma deseas generar:')
+
+
     check_precio = st.checkbox("Histograma de la variable precio")
     check_odometer = st.checkbox("Histograma de la variable odometer")
     check_año = st.checkbox("Histograma de la variable model_year")
