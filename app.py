@@ -5,15 +5,45 @@ import plotly.express as px
 
 car_data = pd.read_csv(
     '/Users/stef/Desktop/TripleTen/Proyecto_web/vehicles_us/vehicles_us.csv')  # leer los datos
-hist_button = st.button('Construir histograma')  # crear un botón
 
-if hist_button:  # al hacer clic en el botón
-    # escribir un mensaje
+
+st.set_page_config(
+    page_title="Veiculos de EUA",
+    page_icon=":chart_with_upwards_trend:",
+    layout="wide",
+)
+
+
+st.header(
+    " :blue[Características de los veículos de EUA]", divider="gray")
+"""
+    :material/traffic_jam: Algunas estadísiticas importantes.
+    """
+
+
+st.write('Selecciona el tipo de gráfico que deseas ver:')
+
+check_histograma = st.checkbox("Histograma")
+check_dispercion = st.checkbox("Gráfica de disperción")
+
+
+if check_histograma:
+
     st.write(
         'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
 
     # crear un histograma
     fig = px.histogram(car_data, x="odometer")
 
-    # mostrar un gráfico Plotly interactivo
+    st.plotly_chart(fig, use_container_width=True)
+
+
+if check_dispercion:
+
+    st.write(
+        'Creación de un grafíco de disperción para el conjunto de datos de anuncios de venta de coches')
+
+    # crear un scatter plot
+    fig = px.scatter(car_data, x="model_year", y="price")
+
     st.plotly_chart(fig, use_container_width=True)
