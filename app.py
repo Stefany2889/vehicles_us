@@ -8,7 +8,7 @@ car_data = pd.read_csv(
 
 
 st.set_page_config(
-    page_title="Veiculos de EUA",
+    page_title="Vehiculos de EUA",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",
 )
@@ -41,7 +41,7 @@ if check_histograma:
 if check_dispercion:
 
     st.write(
-        'Creación de un grafíco de disperción para el conjunto de datos de anuncios de venta de coches')
+        'Creación de un gráfico de disperción para el conjunto de datos de anuncios de venta de coches')
 
     # crear un scatter plot
     fig = px.scatter(car_data, x="model_year", y="price")
